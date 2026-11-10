@@ -31,3 +31,8 @@ function mkdir_and_cd () {
 	mkdir $target && cd $target
 }
 alias mkd=mkdir_and_cd
+
+function cd-git-top () {
+        cd $(git rev-parse --show-toplevel)
+}
+alias git-top=cd-git-top
