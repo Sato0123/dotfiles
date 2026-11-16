@@ -36,3 +36,8 @@ function cd-git-top () {
         cd $(git rev-parse --show-toplevel)
 }
 alias git-top=cd-git-top
+
+cd-git-worktree () {
+	local TARGET_PATH=$(git worktree list | fzf --with-nth 3 | awk '{print $1}')
+	cd "$TARGET_PATH"
+}
